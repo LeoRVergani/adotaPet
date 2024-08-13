@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container-home">
+        <h1>Cadastro de pets</h1>
+        <form>
+            <div class="form-row">
+                <div class="input-container flex-45">
+                    <label for="nome">Nome do pet</label>
+                    <input id="nome" placeholder="Digite o nome do pet"/>
+                </div>
+                <div class="input-container flex-45">
+                    <label for="idade">Idade</label>
+                    <input type="number" id="idade"/>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <label for="cor">Cor do pet</label>
+                <input type="color" id="cor" value="#802600"/>
+            </div>
+
+            <div class="descricao">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao"></textarea>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="button-submit">Salvar</button>
+            </div>
+
+        </form>
+    </div>
+    <footer class="footer-app">
+        <p>Todos os direito reservados. 2024</p>
+    </footer>
+</body>
+</html>
