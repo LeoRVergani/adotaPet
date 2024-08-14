@@ -81,10 +81,26 @@ textarea {
 }
 
 .footer-app {
+    display: flex;
     background-color: #a9490b;
-    height: 70px;
+    height: 50px;
     justify-content: center;
     text-align: center;
     align-items: center;
     bottom: 0;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .container-home {
+        width: 90%;
+    }
+
+    .button-submit {
+        padding: 15px;
+    }
 }

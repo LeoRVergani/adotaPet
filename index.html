@@ -9,7 +9,8 @@
 <body>
     <div class="container-home">
         <h1>Cadastro de pets</h1>
-        <form>
+        <form id="form-pet">
+
             <div class="form-row">
                 <div class="input-container flex-45">
                     <label for="nome">Nome do pet</label>
@@ -31,6 +32,19 @@
                 <textarea id="descricao"></textarea>
             </div>
 
+            <div class="input-container">
+                <label for="">Tipo</label>
+                <select name="" id="tipo">
+                    <option value="">Selecione uma opção</option>
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                    <option value="passado">Passaro</option>
+                    <option value="tartaruga">Tartaruga</option>
+                    <option value="peixe">Peixe</option>
+                    <option value="diversos">Diversos</option>
+                </select>
+            </div>
+
             <div class="button-container">
                 <button type="submit" class="button-submit">Salvar</button>
             </div>
@@ -40,5 +54,7 @@
     <footer class="footer-app">
         <p>Todos os direito reservados. 2024</p>
     </footer>
+
+    <script src="./cadastroPet.js"></script>
 </body>
 </html>
