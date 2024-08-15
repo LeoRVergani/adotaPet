@@ -72,16 +72,17 @@ function adicionarPet(event) {
         tipo: tipo
     }
 
-    let listaNoLocalStorage = JSON.parse(localStorage.getItem("pets"))    // vai no local storage e pega a lista
-    
-    if(listaNoLocalStorage === null) listaNoLocalStorage = []
+        const listaNoLocalStorage = JSON.parse(localStorage.getItem("pets")) || []; // vai no local storage e pega a lista
+        console.log(listaNoLocalStorage);   
 
-    listaNoLocalStorage.push(pet) 
+        listaNoLocalStorage.push(pet);
+        
+        localStorage.setItem("pets", JSON.stringify(listaNoLocalStorage)) // salvar no local storage
 
-    localStorage.setItem("pets", JSON.stringify(listaNoLocalStorage)) // salvar no local storage
-    
     /* 2 - colocar data */  
 }
+
+
 
 document // seu documento HTML
 .getElementById('form-pet') // ir no documento e localizar o elemento com id form-pet

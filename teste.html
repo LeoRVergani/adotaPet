@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>localStorage</title>
+        <style>
+            body {
+                background-color: #f5f5f5;
+                font-family: sans-serif;
+            }
+
+            form {
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                width: 400px;
+            }
+
+            h1 {
+                margin: 0;
+                text-align: center;
+                font-size: 24px;
+            }
+
+            input[type="text"] {
+                margin: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                background-color: #f5f5f5;
+                width: 90%;
+                font-size: 16px;
+                color: #333;
+            }
+
+            button {
+                margin: 10px 5px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #007bff;
+                color: #fff;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: #0062cc;
+            }
+
+            div {
+                font-weight: bold;
+                font-size: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>localStorage</h1>
+
+            <label for="chave">Chave:</label>
+            <input type="text" id="chave" name="chave" placeholder="Digite a chave" />
+
+            <label for="valor">Valor:</label>
+            <input type="text" id="valor" name="valor" placeholder="Digite o valor" />
+
+            <button id="inserir">Inserir</button>
+            <button id="deletar">Deletar</button>
+            <button id="visualizar">Visualizar</button>
+
+            <div id="resposta"></div>
+        </form>
+
+        <script>
+            const inserirBtn = document.getElementById("inserir");
+            const deletarBtn = document.getElementById("deletar");
+            const visualizarBtn = document.getElementById("visualizar");
+            const respostaDiv = document.getElementById("resposta");
+
+            inserirBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                localStorage.setItem(chave.value, valor.value);
+                chave.value = "";
+                valor.value = "";
+            });
+
+            deletarBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                localStorage.removeItem(chave.value);
+                chave.value = "";
+            });
+
+            visualizarBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                const valor = localStorage.getItem(chave.value);
+                respostaDiv.innerHTML = valor ?? "Não encontrado";
+                chave.value = "";
+            });
+        </script>
+    </body>
+</html>
