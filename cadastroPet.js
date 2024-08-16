@@ -61,25 +61,28 @@ function adicionarPet(event) {
         document.getElementById('error-tipo').innerText = ""
     }
 
+    if(nome && foto && descricao && tipo) {
+        const pet = {
+            id: crypto.randomUUID,
+            foto: foto,
+            nome: nome,
+            idade: idade,
+            cor: cor,
+            descricao: descricao,
+            tipo: tipo
+        }
 
-    const pet = {
-        id: crypto.randomUUID,
-        foto: foto,
-        nome: nome,
-        idade: idade,
-        cor: cor,
-        descricao: descricao,
-        tipo: tipo
+            const listaNoLocalStorage = JSON.parse(localStorage.getItem("pets")) || []; // vai no local storage e pega a lista
+            console.log(listaNoLocalStorage);   
+
+            listaNoLocalStorage.push(pet);
+            
+            localStorage.setItem("pets", JSON.stringify(listaNoLocalStorage)) // salvar no local storage
+
+            document.getElementById("form-pet").reset();
     }
 
-        const listaNoLocalStorage = JSON.parse(localStorage.getItem("pets")) || []; // vai no local storage e pega a lista
-        console.log(listaNoLocalStorage);   
 
-        listaNoLocalStorage.push(pet);
-        
-        localStorage.setItem("pets", JSON.stringify(listaNoLocalStorage)) // salvar no local storage
-
-    /* 2 - colocar data */  
 }
 
 

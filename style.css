@@ -4,9 +4,16 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     background-image: url(./img/pegadas.avif);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .container-home {
@@ -91,6 +98,8 @@ textarea {
     align-items: center;
     bottom: 0;
     color: #fff;
+    margin-top: 50px;
+    padding: 1rem;
 }
 
 @media (max-width: 825px) {
@@ -106,3 +115,60 @@ textarea {
         padding: 15px;
     }
 }
+
+/* ===== CSS da página de listagem ===== */
+
+header {
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    align-content: center;
+    background-color: #a9490b;
+    top: 0;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.item-pet {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    width: 225px;
+    height: 250px;
+    border: 1px solid #88888881;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-pet a {
+    border: 1px solid #802600;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    color: #802600;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.item-pet a:hover {
+    background-color: #802600;
+    color: #fff;
+}
+
+.item-pet img {
+    height:60%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.container-pets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
